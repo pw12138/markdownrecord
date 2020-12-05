@@ -1,0 +1,54 @@
+# markdown 学习笔记
+## 1. 合理的创建标题，层次清晰  
+通常我们使用<kbd>#</kbd>+<kbd>space</kbd>来创建的一个一级标题，<kbd>##</kbd>+<kbd>space</kbd>则会生成一个二级标题，以此类推，当我们使用更多的<kbd>#</kbd>来创建标题时，其层次等级是依次下降的。我们最多可以创建六级标题。
+例如：
+# 一级标题:<kbd>#</kbd>+<kbd>space</kbd>
+## 二级标题:<kbd>##</kbd>+<kbd>space</kbd>
+### 三级标题:<kbd>###</kbd>+<kbd>space</kbd>
+#### 四级标题:<kbd>####</kbd>+<kbd>space</kbd>
+##### 五级标题:<kbd>#####</kbd>+<kbd>space</kbd>
+###### 六级标题:<kbd>######</kbd>+<kbd>space</kbd>
+
+## 2. 如何改变文本的样式
+
+- 文本强调：<kbd>* </kbd>+<kbd>内容</kbd>+ <kbd> * </kbd> 或者 <kbd> _ </kbd>+<kbd>内容</kbd>+<kbd>  _ </kbd>
+*强调文本* _斜体文本_  
+
+- 文本加粗：<kbd>**</kbd>+<kbd>内容</kbd>+<kbd> **</kbd>或者<kbd>__</kbd>+<kbd>内容</kbd>+<kbd> __</kbd>
+**加粗文本** __加粗文本__
+
+- 文本标记：<kbd>==</kbd>+<kbd>内容</kbd>+<kbd> ==</kbd>
+==标记文本==
+
+- 文本划线：<kbd> ~~ </kbd>+<kbd>内容</kbd>+<kbd> ~~ </kbd>
+~~删除文本~~  
+  
+- 文本引用：<kbd>></kbd>+<kbd>内容</kbd>
+>引用文本
+- 特殊字符：
+  - <kbd>h</kbd><kbd>~ </kbd><kbd>2</kbd><kbd>~ </kbd><kbd>0</kbd> ----> H~2~O
+  - <kbd>2</kbd><kbd>^ </kbd><kbd>10</kbd><kbd>^ </kbd> ----> 2^10^ 
+
+## 3. 插入链接及图片
+### 链接
+格式如下：
+
+[需要转化成超链接的文本]+(网址)
+
+例如：[百度官网](https://www.baidu.com/)（点它！一定要点他！）
+
+
+### 图片
+格式如下：
+
+-![Alt]+(图片网址)
+
+`ps:大部分网上的图片可通过单击右键选择复制其图片地址`
+
+此外，如果需要更改图片大小或相对位置，可直接在地址后加入以下代码
+
+大小：=x*y (x，y为大小)
+位置：#pic_center
+
+`ps两者同时使用时先位置,后大小.`
+
