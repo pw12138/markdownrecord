@@ -165,3 +165,92 @@ $ git config --global user.email johndoe@example.com
 _End of this chapter_
 
 ---
+## 2. git basic
+### 2.1 取得项目的 Git 仓库
+>有两种取得 Git 项目仓库的方法。第一种是在现存的目录下，通过导入所有文件来创建新的 Git 仓库。第二种是从已有的 Git 仓库克隆出一个新的镜像仓库来。
+
+#### 在工作目录中初始化新仓库
+要对现有的某个项目开始用 Git 管理，只需到此项目所在的目录，执行：
+```
+$ git init
+$ git add *
+$ git commit -m 'first edition'
+```
+
+如果需要从现有的仓库clone一个仓库，命令如下：
+```
+$ git clone git://github.com/xxxxx/xxx.git
+```
+也可以在后面加上名字实现仓库命名，否则将默认为项目名称。
+
+### 2.2 记录每次更新到仓库
+##### 检查当前文件状态
+>要确定哪些文件当前处于什么状态，可以用 git status 命令。如果在克隆仓库之后立即执行此命令，会看到类似这样的输出：
+```
+$ git status
+    # On branch master
+    nothing to commit (working directory clean)
+```
+#### 跟踪新文件
+>使用命令 git add 开始跟踪一个新文件。所以，要跟踪 README 文件，运行：
+```
+$ git add README
+$ git status
+    # On branch master
+    # Changes to be committed:
+    # (use "git reset HEAD <file>..." to unstage)
+    #
+    # new file: README
+    #
+```
+
+#### 暂存已修改文件
+使用如下命令：
+```
+$ git add 文件名
+```
+#### 查看已暂存和未暂存的更新
+查看修改过的文件
+```
+$ git status
+```
+运行 git diff 看暂存前后的变化：此命令比较的是工作目录中当前文件和暂存区域快照之间的差异，也就是修改之后还没有暂存起来的变化内容。
+```
+$ git diff
+```
+用 git diff --cached 查看已经暂存起来的变化：已经暂存起来的文件和上次提交时的快照之间的差异
+```
+$ git diff --cached
+```
+
+
+##### 提交更新
+```
+$ git commit
+```
+这种方式会启动文本编辑器以便输入本次提交的说明
+#### 跳过使用暂存区域
+>尽管使用暂存区域的方式可以精心准备要提交的细节，但有时候这么做略显繁琐。Git 提供了一个跳过使用暂存区域的方式，只要在提交的时候，给 git commit 加上 -a 选项，Git 就会自动把所有已经跟踪过的文件暂存起来一并提交，从而跳过 git add 步骤
+
+#### 移除文件
+>要从 Git 中移除某个文件，就必须要从已跟踪文件清单中移除（确切地说，是从暂存区域移除），然后提交。可以用 git rm 命令完成此项工作，并连带从工作目录中删除指定的文件，这样以后就不会出现在未跟踪文件清单中了。
+如果只是简单地从工作目录中手工删除文件，运行 git status 时就会在 “Changes not staged for commit” 部分（也就是未暂存清单）看到
+
+
+### 2.3 查看提交历史
+在提交了若干更新之后，又或者克隆了某个项目，想回顾下提交历史，可以使用 git log 命令查看。
+
+
+### 2.4 撤消操作
+有时候我们提交完了才发现漏掉了几个文件没有加，或者提交信息写错了。想要撤消刚才的提交操作，可以使用 --amend 选项重新提交：
+```
+$ git commit --amend
+```
+#### 查看当前的远程库
+要查看当前配置有哪些远程仓库，可以用 git remote 命令，它会列出每个远程库的简短名字。在克隆完某个项目后，至少可以看到一个名为 origin 的远程库，Git 默认使用这个名字来标识你所克隆的原始仓库
+
+#### 添加远程仓库
+要添加一个新的远程仓库，可以指定一个简单的名字，以便将来引用，运行 git remote add [shortname] [url]
+
+#### 查看远程仓库信息
+我们可以通过命令 git remote show [remote-name] 查看某个远程仓库的详细信息
