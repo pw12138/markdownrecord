@@ -254,3 +254,5 @@ $ git commit --amend
 
 #### 查看远程仓库信息
 我们可以通过命令 git remote show [remote-name] 查看某个远程仓库的详细信息
+
+`Tips `：git commit -m "" 和git commit -a -m ''的区别应当注意到（一个为两个双引号，一个为两个单引号），后者如若打成双引号则无法提交。
